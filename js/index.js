@@ -8,13 +8,11 @@ $(function() {
 		next: '<span><i class="fas fa-arrow-down"></i></span>',
 		sensitivity: true,
 		pageNum: function(index){
-			console.log(index)
+			//console.log(index)
 			//客製化-第一跟最後一區要隱藏
 			if (index==1 || index==$(".anchor-section").length) {
-				console.log('check1')
 				$(".anchor-nav").addClass('not-show');
 			}else {
-				console.log('check2')
 				$(".anchor-nav").removeClass('not-show');
 			}
 		}
@@ -27,7 +25,6 @@ $(function() {
 		thisScrollTop = $(window).scrollTop();
 		//控制錨點nav顯示時機
 		if (thisScrollTop<$(".anchor-section1").height() || thisScrollTop>$(".anchor-section"+$(".anchor-section").length).offset().top-150) {
-			console.log('check3')
 			$(".anchor-nav").addClass('not-show');
 		}else {
 			$(".anchor-nav").removeClass('not-show');

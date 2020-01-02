@@ -1,0 +1,59 @@
+@image: "../images/";
+//@image: "http://image.funmily.com/wh2/event/1/";
+@mc-high: #FF4290;
+@mc-light: #FFF000;
+@mc-dark: #3097C8;
+@sc-light: #CCC;
+@sc-dark: #666;
+div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, a, address, em, img, q, s, small, strike, strong, sub, sup, b, u, i, dl, dt, dd, ol, ul, li, form, label, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, footer, header, nav, section, summary, time, mark, audio, video{margin:0; padding:0; border:0; font-size:100%; font:inherit; vertical-align:baseline}
+article, aside, footer, header, nav, section { display:block }
+body { font-family: Arial, "微軟正黑體"!important; }
+ol, ul { list-style: none }
+blockquote, q { quotes: none }
+blockquote:before, blockquote:after, q:before, q:after{ content: ''; content: none }
+table { border-collapse: collapse; border-spacing: 0 }
+img {
+	display: block;
+	width: auto;
+	height: auto;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+
+}
+span {
+	display: inline-block;
+}
+div, p, a, li, td { -webkit-text-size-adjust:none; }
+* {
+	box-sizing: border-box;
+}
+.for-mobile {
+	display: none;
+	@media all and (max-width: 800px) {
+		& { display: block; }
+	}
+}
+.for-desktop {
+	display: block;
+	@media all and (max-width: 800px) {
+		& { display: none; }
+	}
+}
+/*消除iphone電話號碼顏色異常*/
+a[href^=tel] {
+	text-decoration:inherit;
+	color: inherit;
+}
+/*取消IE的input右側clear按鈕*/
+::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+}
+/*取消Chrome自動填入input淡黃色背景色*/
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+

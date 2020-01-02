@@ -1,0 +1,49 @@
+@charset "utf-8";
+ul.anchor-nav {
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  position: fixed;
+  top: 50%;
+  right: 20px;
+  transform: translate3d(0px, -50%, 0px);
+  list-style-type: none;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+ul.anchor-nav.not-show,
+ul.anchor-nav.init {
+  opacity: 0;
+  visibility: hidden;
+}
+ul.anchor-nav  li[data-target] {
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+ul.anchor-nav  li[data-target] span {
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border: solid 1px #000;
+}
+ul.anchor-nav  li[data-target] span:hover {
+  background-color: #000;
+}
+ul.anchor-nav  li[data-target].active span {
+  background-color: #000;
+}
+
+ul.anchor-nav  li {
+  cursor: pointer;
+  text-align: center;
+  font-size: 14px;
+  margin: 10px 0;
+  transition: all 0.3s ease;
+}
+ul.anchor-nav  li.prev:hover {
+  transform: translate3d(0px, -5px, 0px);
+}
+ul.anchor-nav  li.next:hover {
+  transform: translate3d(0px, 5px, 0px);
+}

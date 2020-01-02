@@ -1,0 +1,60 @@
+// 1.04a
+// PIE.htc 自訂路徑
+
+// 1.05b
+// PIE 外部輸入路徑訊息，不用自訂變數
+// .f-Z = font-size
+// .f-W = font-weight
+// .f-S 新增預設值 (#CCC 0 0 10px)
+
+// 1.05c
+// .b-S 新增預設值 (#CCC 0 0 10px)
+
+// 1.06c 更新
+// 增加 Margin 屬性
+
+// 1.07
+// bg-NO 改為強制覆蓋
+// 新增 pd ( padding )
+
+// 1.10
+// 刪除與簡化
+
+// 1.11
+// Less CSS3 提示優化
+
+// 1.20
+// 壓縮與簡化說明
+
+// 1.30
+// 添加 MK 除錯工具
+// SHARE：http://selfecy.com/css-troubleshooting-slide/#/9/2
+// SOURCE：http://www.marcofolio.net/css/css_trick_debug_your_html_and_css.html
+
+// 清除背景
+.bg-NO { background: none !important;background-color: transparent !important;background-image: none !important }
+// 清除邊框
+.b-NO { border: none !important }
+// 雙色漸層
+.bg-G ( @start:#e1eefe, @end:#b4deff) { background: @start;background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,@start), color-stop(100%,@end));background: -webkit-linear-gradient(top, @start 0%,@end 100%);background: -moz-linear-gradient(top, @start 0%, @end 100%);background: -ms-linear-gradient(top, @start 0%,@end 100%);background: -o-linear-gradient(top, @start 0%,@end 100%);background: linear-gradient(to bottom, @start 0%,@end 100%);-pie-background: linear-gradient(@start,@end) }
+// 文字過多
+.o-E { white-space: nowrap;overflow: hidden;text-overflow: ellipsis }
+// 總透明度
+.op ( @opacity: 0.5 ) { @opacityPercentage: @opacity * 100;opacity: @opacity;filter: ~"alpha(opacity = @{opacityPercentage} )" }
+//  CSS PIE
+.PIE ( @PIEpath:"" ) { position: relative;z-index: 0;behavior: url("@{PIEpath}PIE.htc") }
+// 補間動畫
+.trs ( @target: all 0.3s ease ) { -webkit-transition:	@target;-moz-transition: @target;-o-transition: @target;-ms-transition:	 @target;transition: @target }
+
+.mk-debug {
+	// XD 翻譯
+	/* 固態綠色 */ * *:hover { outline:2px solid #89A81E }
+	/* 固態橘色 */ * * *:hover { outline:2px solid #F34607 }
+	/* 固態藍色 */ * * * *:hover { outline:2px solid #5984C3 }
+	/* 固態紅色 */ * * * * *:hover { outline:2px solid #CD1821 }
+	/* 點點綠色 */ * * * * * *:hover { outline:2px dotted #89A81E }
+	/* 點點橘色 */ * * * * * * *:hover { outline:2px dotted #F34607 }
+	/* 點點藍色 */ * * * * * * * *:hover { outline:2px dotted #5984C3 }
+	/* 點點紅色 */ * * * * * * * * *:hover { outline:2px dotted #CD1821 }
+}
+.text-stroke ( @color: #CCC ) { text-shadow: 2px 0 0 @color, -2px 0 0 @color, 0 2px 0 @color, 0 -2px 0 @color, 1px 1px @color, -1px -1px 0 @color, 1px -1px 0 @color, -1px 1px 0 @color }
